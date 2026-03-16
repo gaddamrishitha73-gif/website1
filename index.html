@@ -1,0 +1,351 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Tiffin Corner</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* Header */
+
+header{
+background:#ff7b00;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+nav{
+background:#333;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:18px;
+}
+
+nav a:hover{
+color:#ff7b00;
+}
+
+/* Hero */
+
+.hero{
+position:relative;
+}
+
+.hero img{
+width:100%;
+height:400px;
+object-fit:cover;
+}
+
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+/* Menu */
+
+#menu{
+padding:40px;
+text-align:center;
+}
+
+.menu-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:20px;
+}
+
+.menu-item{
+background:white;
+width:220px;
+padding:15px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-item img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.menu-item h3{
+color:#ff7b00;
+margin:10px 0;
+}
+
+.menu-item p{
+font-size:14px;
+margin:5px 0;
+}
+
+.menu-item button{
+background:#ff7b00;
+color:white;
+border:none;
+padding:8px 15px;
+margin-top:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.menu-item button:hover{
+background:#e56700;
+}
+
+/* Gallery */
+
+#gallery{
+padding:40px;
+background:white;
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* Order Tracking */
+
+#tracking{
+padding:40px;
+text-align:center;
+}
+
+input{
+padding:10px;
+width:200px;
+}
+
+button.track{
+padding:10px 15px;
+background:#ff7b00;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* Progress Bar */
+
+.progress{
+width:80%;
+background:#ddd;
+margin:20px auto;
+height:25px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#4CAF50;
+text-align:center;
+color:white;
+line-height:25px;
+}
+
+/* Contact */
+
+#contact{
+padding:40px;
+text-align:center;
+background:#eee;
+}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>South Tiffin Corner</h1>
+<p>Fresh • Hot • Traditional</p>
+</header>
+
+<nav>
+<a href="#menu">Menu</a>
+<a href="#gallery">Gallery</a>
+<a href="#tracking">Track Order</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3">
+<div class="hero-text">
+<h2>Authentic South Indian Breakfast</h2>
+<p>Fresh Idli • Crispy Dosa • Hot Vada</p>
+</div>
+</section>
+
+<section id="menu">
+
+<h2>Our Menu</h2>
+
+<div class="menu-container">
+
+<div class="menu-item">
+<img src="idli.jpeg">
+<h3>Idli</h3>
+<p>Soft steamed rice cakes served with coconut chutney and hot sambar.</p>
+<p><b>Price ₹30</b></p>
+<button onclick="orderFood('Idli')">Order Now</button>
+</div>
+
+<div class="menu-item">
+<img src="dosa.jpeg">
+<h3>Dosa</h3>
+<p>Crispy golden dosa made from fermented rice and lentil batter.</p>
+<p><b>Price ₹50</b></p>
+<button onclick="orderFood('Dosa')">Order Now</button>
+</div>
+
+<div class="menu-item">
+<img src="vada.jpeg">
+<h3>Medu Vada</h3>
+<p>Deep-fried lentil doughnut served hot with chutney and sambar.</p>
+<p><b>Price ₹40</b></p>
+<button onclick="orderFood('Vada')">Order Now</button>
+</div>
+
+<div class="menu-item">
+<img src="upma.jpeg">
+<h3>Upma</h3>
+<p>Traditional semolina breakfast cooked with vegetables and spices.</p>
+<p><b>Price ₹35</b></p>
+<button onclick="orderFood('Upma')">Order Now</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Shop Gallery</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+<img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
+</div>
+
+</section>
+
+<section id="tracking">
+
+<h2>Track Your Order</h2>
+
+<input type="text" id="orderId" placeholder="Enter Order ID">
+<button class="track" onclick="trackOrder()">Track</button>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar">0%</div>
+</div>
+
+<p id="status"></p>
+
+</section>
+
+<section id="contact">
+
+<h2>Visit Us</h2>
+<p>📍 Main Road, Your City</p>
+<p>📞 9876543210</p>
+<p>🕒 6:00 AM – 11:00 AM</p>
+
+</section>
+
+<footer>
+<p>© 2026 South Tiffin Corner</p>
+</footer>
+
+<script>
+
+let currentOrderId = 100;
+
+function orderFood(item){
+
+currentOrderId++;
+
+alert("Order placed for " + item + "\nYour Order ID is: " + currentOrderId);
+
+}
+
+function trackOrder(){
+
+let id=document.getElementById("orderId").value;
+let bar=document.getElementById("progressBar");
+let status=document.getElementById("status");
+
+let progress=Math.min((id-100)*25,100);
+
+if(progress<=0){
+status.innerHTML="Invalid Order ID";
+bar.style.width="0%";
+bar.innerHTML="0%";
+return;
+}
+
+bar.style.width=progress+"%";
+bar.innerHTML=progress+"%";
+
+if(progress==25) status.innerHTML="Order Received";
+else if(progress==50) status.innerHTML="Preparing Food";
+else if(progress==75) status.innerHTML="Out for Delivery";
+else status.innerHTML="Delivered";
+
+}
+
+</script>
+
+</body>
+</html>
